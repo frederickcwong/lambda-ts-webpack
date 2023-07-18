@@ -17,6 +17,11 @@ To test:
 - write tests
 - `npm run test`, `npx jest`, or use vscode debugger (two built-in launch tasks for jest are defined in `.vscode/launch.json`)
 - `sam local invoke <function name> -e <event>` will invoke the function locally using lambda's docker image. Make sure the function is built using `sam build` command first. See sam's local invoke documentation for more info.
+  ```shell
+  sam build
+  sam local invoke SampleFunction \
+    -e ./src/__tests__/events/event-ok.json
+  ```
 
 To build:
 
