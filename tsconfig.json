@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./build",
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@handlers/*": ["./src/handlers/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@test/*": ["./src/__tests__/*"]
+    }
+  },
+  "exclude": ["node_modules", "build"]
+}

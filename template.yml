@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Lambda with Typescript and Webpack Boilplate
+Transform: AWS::Serverless-2016-10-31
+Globals:
+  Function:
+    Runtime: nodejs18.x
+    Architectures: [arm64]
+    MemorySize: 128
+    Timeout: 5
+
+Resources:
+  SampleFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: makefile
+    Properties:
+      FunctionName: sample-function
+      Handler: build/handlers/sample/sum.handler
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /
+            Method: GET
+
+Outputs:
+  WebEndpoint:
+    Description: Web endpoint
+    Value: !Sub https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/

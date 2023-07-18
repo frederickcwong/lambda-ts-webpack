@@ -1,0 +1,13 @@
+{
+  // use prettier for formatting & auto format on save
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
+  // customize editor tab indentation
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+
+  // customize terminal tab's title
+  "terminal.integrated.tabs.title": "${cwdFolder}"
+}

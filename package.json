@@ -1,0 +1,44 @@
+{
+  "name": "lambda-ts-webpack",
+  "version": "0.1.0",
+  "description": "boilerplate for building lambda function with typescript and webpack",
+  "scripts": {
+    "prebuild": "npx rimraf build",
+    "build": "./node_modules/typescript/bin/tsc -p ./tsconfig.json",
+    "build:sam": "webpack build",
+    "format": "npx prettier --write \"**/*.+(js|ts|json)\"",
+    "lint": "npx eslint --ext .js,.ts --max-warnings 0 --report-unused-disable-directives src",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "npx jest"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "typescript",
+    "webpack"
+  ],
+  "author": "Frederick Wong",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.119",
+    "@types/jest": "^29.5.3",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard-with-typescript": "^36.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.6.1",
+    "jest-mock-extended": "^3.0.4",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.1",
+    "ts-jest": "^29.1.1",
+    "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
